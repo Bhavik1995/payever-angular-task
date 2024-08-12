@@ -1,0 +1,31 @@
+<div class="calendar-container">
+  <div class="calendar-header">
+    <h2>{{ currentDate | date: 'fullDate' }}</h2>
+  </div>
+
+  <div class="time-grid">
+    <div class="time-slot" *ngFor="let hour of hours">
+      {{ hour }}:00
+    </div>
+  </div>
+
+  <div class="appointments-grid">
+    <div
+      class="appointment"
+      *ngFor="let appointment of appointments; trackBy: trackById"
+      [style.gridRow]="'span ' + getAppointmentDuration(appointment)"
+      cdkDrag
+      (cdkDragDropped)="drop($event, appointment.date)"
+    >
+      <div class="appointment-header">
+        <span>{{ appointment.title }}</span>
+        <button mat-icon-button (click)="deleteAppointment(appointment.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+      <div class="appointment-time">
+        {{ appointment.date | date: 'shortTime' }}
+      </div>
+    </div>
+  </div>
+</div>
