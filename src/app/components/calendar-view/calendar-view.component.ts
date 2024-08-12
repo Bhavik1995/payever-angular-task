@@ -46,14 +46,11 @@ export class CalendarViewComponent implements OnInit {
     const newDate = new Date(date);
     newDate.setHours(event.container.data[event.currentIndex].date.getHours());
     newDate.setMinutes(event.container.data[event.currentIndex].date.getMinutes());
-
-    // Update the appointment with the new date
     const appointmentId = event.container.data[event.currentIndex].id;
     this.appointmentService.moveAppointment(appointmentId, newDate);
   }
 
   getAppointmentDuration(appointment: Appointment): number {
-    // Assuming each appointment is 1 hour
     return 1;
   }
 
