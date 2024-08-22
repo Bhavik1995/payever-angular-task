@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AppointmentService, Appointment } from '../../services/appointment.service';
+import { AppointmentService, Appointment } from '../../../services/appointment.service';
 import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { DragDropModule } from '@angular/cdk/drag-drop'; // Import DragDropModule here
 import { CommonModule } from '@angular/common';

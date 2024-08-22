@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AppointmentFormComponent } from '../appointment-form/appointment-form.component';
+import { AppointmentFormComponent } from '../../appointment/appointment-form/appointment-form.component';
 import { CalendarViewComponent } from '../calendar-view/calendar-view.component';
 
 @Component({

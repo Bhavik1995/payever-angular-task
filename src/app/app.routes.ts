@@ -1,6 +1,8 @@
 import { Routes } from '@angular/router';
-import { CalendarComponent } from './components/calendar/calendar.component';
 
 export const routes: Routes = [
-    { path: '', component: CalendarComponent }
+    { path: '', redirectTo: 'calendar', pathMatch: 'full' },
+    { path: 'calendar', loadChildren: () => import('./modules/calendar/calendar.module').then(m => m.CalendarModule) },
+    { path: 'appointment', loadChildren: () => import('./modules/appointment/appointment.module').then(m => m.AppointmentModule) },
+    { path: '**', redirectTo: 'calendar' }
 ];
